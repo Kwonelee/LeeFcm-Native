@@ -14,6 +14,7 @@ sed -i "s/hostname='LEDE'/hostname='FanchmWrt'/g" package/base-files/files/bin/c
 sed -i 's/LEDE/OpenWrt/g' package/base-files/image-config.in
 sed -i 's/lede/openwrt/g' package/base-files/image-config.in
 sed -i 's/LEDE/OpenWrt/g' package/lean/default-settings/files/zzz-default-settings
+sed -i '/samba/d' package/lean/default-settings/files/zzz-default-settings
 
 # fanchmwrt样式处理
 cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/menu-fanchmwrt.js package/fcm/luci-theme-fanchmwrt/htdocs/luci-static/resources/menu-fanchmwrt.js
