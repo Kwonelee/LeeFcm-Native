@@ -17,7 +17,7 @@ sed -i 's/LEDE/OpenWrt/g' package/lean/default-settings/files/zzz-default-settin
 sed -i '/samba/d' package/lean/default-settings/files/zzz-default-settings
 
 # fanchmwrt样式处理
-cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/menu-fanchmwrt.js package/fcm/luci-theme-fanchmwrt/htdocs/luci-static/resources/menu-fanchmwrt.js
+cp -f $GITHUB_WORKSPACE/FILES/menu-fanchmwrt.js package/fcm/luci-theme-fanchmwrt/htdocs/luci-static/resources/menu-fanchmwrt.js
 cp -rf $GITHUB_WORKSPACE/FILES/fanchmwrt/* package/fcm/luci-theme-fanchmwrt/htdocs/luci-static/fanchmwrt/
 
 # 使用6.18内核
