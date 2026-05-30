@@ -282,7 +282,6 @@ return baseclass.extend({
 							E('img', {
 							    'src': '/luci-static/fanchmwrt/icons/home.png',  // 👈 PNG 图标路径
 								'class': 'home-icon',
-								'alt': 'Home',
 								'style': 'width: 20px; height: 20px; vertical-align: middle;'
 							 })
 						])
