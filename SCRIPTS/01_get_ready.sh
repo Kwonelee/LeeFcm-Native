@@ -7,6 +7,7 @@ cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/sysupgrade.conf package/base-files/files/
 cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/950-fwx-nf-conn-struct-user-hook.patch target/linux/generic/hack-6.12/
 cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/target.mk include/target.mk
 cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/rc.local package/base-files/files/etc/rc.local
+cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/login.sh package/base-files/files/usr/libexec/login.sh
 cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/Makefile package/base-files/Makefile
 cp -a $GITHUB_WORKSPACE/FILES/fcmfiles/fcm package/
 sed -i "s/hostname='LEDE'/hostname='FanchmWrt'/g" package/base-files/files/bin/config_generate
