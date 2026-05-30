@@ -281,7 +281,6 @@ return baseclass.extend({
 						E('a', { 'href': '/cgi-bin/luci/admin/fwx_dashboard', 'title': _('Home') }, [
 							E('img', {
 							    'src': '/luci-static/fanchmwrt/icons/home.png',  // 👈 PNG 图标路径
-								'class': 'home-icon',
 								'style': 'width: 20px; height: 20px; vertical-align: middle;'
 							 })
 						])
