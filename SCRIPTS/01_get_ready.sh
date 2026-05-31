@@ -22,5 +22,9 @@ sed -i '/samba/d' package/lean/default-settings/files/zzz-default-settings
 cp -f $GITHUB_WORKSPACE/FILES/menu-fanchmwrt.js package/fcm/luci-theme-fanchmwrt/htdocs/luci-static/resources/menu-fanchmwrt.js
 cp -rf $GITHUB_WORKSPACE/FILES/fanchmwrt/* package/fcm/luci-theme-fanchmwrt/htdocs/luci-static/fanchmwrt/
 
+# 更新odhcpd
+cp -a $GITHUB_WORKSPACE/FILES/odhcpd/Makefile package/network/services/odhcpd/Makefile
+cp -a $GITHUB_WORKSPACE/FILES/odhcp6c/Makefile package/network/ipv6/odhcp6c/Makefile
+
 # 使用6.18内核
 #sed -i "s/6.12/6.18/g" target/linux/rockchip/Makefile
