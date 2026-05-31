@@ -2,13 +2,13 @@
 
 # fanchmwrt处理
 sed -i 's/tty1::askfirst/tty1::respawn/g' target/linux/x86/base-files/etc/inittab
-cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/banner package/base-files/files/etc/banner
-cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/sysupgrade.conf package/base-files/files/etc/sysupgrade.conf
+cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/base-files/banner package/base-files/files/etc/banner
+cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/base-files/sysupgrade.conf package/base-files/files/etc/sysupgrade.conf
 cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/950-fwx-nf-conn-struct-user-hook.patch target/linux/generic/hack-6.12/
 cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/target.mk include/target.mk
-cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/rc.local package/base-files/files/etc/rc.local
-cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/login.sh package/base-files/files/usr/libexec/login.sh
-cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/Makefile package/base-files/Makefile
+cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/base-files/rc.local package/base-files/files/etc/rc.local
+cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/base-files/login.sh package/base-files/files/usr/libexec/login.sh
+cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/base-files/Makefile package/base-files/Makefile
 cp -a $GITHUB_WORKSPACE/FILES/fcmfiles/fcm package/
 sed -i "s/hostname='LEDE'/hostname='FanchmWrt'/g" package/base-files/files/bin/config_generate
 #sed -i 's/default "LEDE"/default "FanchmWrt"/g' package/base-files/image-config.in
