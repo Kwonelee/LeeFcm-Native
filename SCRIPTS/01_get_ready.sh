@@ -11,6 +11,7 @@ cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/base-files/login.sh package/base-files/fi
 cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/base-files/Makefile package/base-files/Makefile
 cp -a $GITHUB_WORKSPACE/FILES/fcmfiles/fcm package/
 cp -a $GITHUB_WORKSPACE/FILES/fcmfiles/Makefile Makefile
+cp -a $GITHUB_WORKSPACE/FILES/fcmfiles/feature.cfg package/fcm/fwxd/files/feature.cfg
 sed -i "s/hostname='LEDE'/hostname='FanchmWrt'/g" package/base-files/files/bin/config_generate
 #sed -i 's/default "LEDE"/default "FanchmWrt"/g' package/base-files/image-config.in
 sed -i 's/LEDE/OpenWrt/g' package/base-files/image-config.in
