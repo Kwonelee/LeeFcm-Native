@@ -20,10 +20,10 @@ sed -i 's/LEDE/OpenWrt/g' package/lean/default-settings/files/zzz-default-settin
 sed -i '/samba/d' package/lean/default-settings/files/zzz-default-settings
 
 # luci-theme-fanchmwrt主题处理
-# 右上角图标、Home图标替换
-cp -f $GITHUB_WORKSPACE/FILES/menu-fanchmwrt.js package/fcm/luci-theme-fanchmwrt/htdocs/luci-static/resources/menu-fanchmwrt.js
-# 菜单icon替换、css替换
+# css图标定义、菜单icon替换
 cp -rf $GITHUB_WORKSPACE/FILES/fanchmwrt/* package/fcm/luci-theme-fanchmwrt/htdocs/luci-static/fanchmwrt/
+# 右上角图标、Home图标引用
+cp -f $GITHUB_WORKSPACE/FILES/menu-fanchmwrt.js package/fcm/luci-theme-fanchmwrt/htdocs/luci-static/resources/menu-fanchmwrt.js
 
 # 更新odhcpd
 cp -a $GITHUB_WORKSPACE/FILES/odhcpd/Makefile package/network/services/odhcpd/Makefile
