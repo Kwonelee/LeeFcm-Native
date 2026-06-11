@@ -1,5 +1,18 @@
 #!/bin/bash -e
 
+# package/fcm拉取
+# Git稀疏克隆，只克隆指定目录到package/
+function git_sparse_clone() {
+  branch="$1" repourl="$2" && shift 2
+  git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
+  repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
+  cd $repodir && git sparse-checkout set $@
+  mv -f $@ ../package/
+  cd .. && rm -rf $repodir
+}
+
+git_sparse_clone fanchmwrt-25.12.4 https://github.com/fanchmwrt/fanchmwrt package/fcm
+
 # fanchmwrt处理
 sed -i 's/tty1::askfirst/tty1::respawn/g' target/linux/x86/base-files/etc/inittab
 cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/base-files/banner package/base-files/files/etc/banner
@@ -9,7 +22,7 @@ cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/target.mk include/target.mk
 cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/base-files/rc.local package/base-files/files/etc/rc.local
 cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/base-files/login.sh package/base-files/files/usr/libexec/login.sh
 cp -f $GITHUB_WORKSPACE/FILES/fcmfiles/base-files/Makefile package/base-files/Makefile
-cp -a $GITHUB_WORKSPACE/FILES/fcmfiles/fcm package/
+#cp -a $GITHUB_WORKSPACE/FILES/fcmfiles/fcm package/
 cp -a $GITHUB_WORKSPACE/FILES/fcmfiles/Makefile Makefile
 cp -a $GITHUB_WORKSPACE/FILES/fcmfiles/feature.cfg package/fcm/fwxd/files/feature.cfg
 sed -i "s/hostname='LEDE'/hostname='FanchmWrt'/g" package/base-files/files/bin/config_generate
