@@ -1,7 +1,6 @@
 #!/bin/bash -e
 
 # package/fcm拉取
-# Git稀疏克隆，只克隆指定目录到package/
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
   git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
