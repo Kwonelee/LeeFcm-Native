@@ -1,0 +1,23 @@
+### INITIALIZATION ###
+CONFIG_TARGET_rockchip=y
+CONFIG_TARGET_rockchip_armv8=y
+CONFIG_TARGET_rockchip_armv8_DEVICE_firefly_station-m2=y
+CONFIG_TARGET_KERNEL_PARTSIZE=128
+# CONFIG_TARGET_ROOTFS_EXT4FS is not set
+CONFIG_TARGET_ROOTFS_PARTSIZE=2048
+
+### APPLICATION ###
+CONFIG_PACKAGE_luci-app-ramfree=y
+CONFIG_PACKAGE_luci-app-ttyd=y
+CONFIG_PACKAGE_luci-app-diskman=y
+CONFIG_PACKAGE_luci-app-cpufreq=y
+
+# Fwx
+# CONFIG_PACKAGE_luci-app-fwx-mac-blacklist is not set
+# CONFIG_PACKAGE_luci-app-fwx-record-whitelist is not set
+# CONFIG_PACKAGE_luci-app-fwx-app-center is not set
+
+### GCC 14 ###
+CONFIG_DEVEL=y
+CONFIG_TOOLCHAINOPTS=y
+CONFIG_GCC_USE_VERSION_14=y
