@@ -16,10 +16,10 @@ sed -i 's/nas/services/g' feeds/luci/applications/luci-app-samba4/root/usr/share
 sed -i "s/192.168.1.1/192.168.5.88/g" package/base-files/files/bin/config_generate
 
 # clash_meta
-#mkdir -p files/etc/openclash/core
-#CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz"
-#wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
-#chmod +x files/etc/openclash/core/clash*
+mkdir -p files/etc/openclash/core
+CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz"
+wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
+chmod +x files/etc/openclash/core/clash*
 
 # clash_config
 #mkdir -p files/etc/config
