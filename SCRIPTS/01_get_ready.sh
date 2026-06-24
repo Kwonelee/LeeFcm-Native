@@ -37,7 +37,8 @@ cp -rf $GITHUB_WORKSPACE/FILES/fanchmwrt/* package/fcm/luci-theme-fanchmwrt/htdo
 cp -f $GITHUB_WORKSPACE/FILES/menu-fanchmwrt.js package/fcm/luci-theme-fanchmwrt/htdocs/luci-static/resources/menu-fanchmwrt.js
 
 # 其他处理
-sed -i 's/config BINUTILS_VERSION_2_42/config BINUTILS_VERSION_2_43/g' toolchain/binutils/Config.version
+sed -i '/^config BINUTILS_VERSION_2_42$/,/^config/ {s/^default y if !TOOLCHAINOPTS$//;}; /^config BINUTILS_VERSION_2_43$/,/^config/ {s/^bool$/default y if !TOOLCHAINOPTS\
+bool/;}' toolchain/binutils/Config.version
 
 # 使用6.18内核
 #sed -i "s/6.12/6.18/g" target/linux/rockchip/Makefile
