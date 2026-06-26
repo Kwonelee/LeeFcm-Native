@@ -14,6 +14,17 @@ echo -e "\\ndefine Device/firefly_station-m2
 endef
 TARGET_DEVICES += firefly_station-m2" >> target/linux/rockchip/image/armv8.mk
 
+echo -e "\\ndefine Device/rockchip_wocyber-a3
+  DEVICE_VENDOR := Rockchip
+  DEVICE_MODEL := Wocyber A3
+  SOC := rk3568
+  DEVICE_DTS := rk3568-wocyber-a3
+  SUPPORTED_DEVICES += rockchip,wocyber-a3
+  UBOOT_DEVICE_NAME := wocyber-a3-rk3568
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
+endef
+TARGET_DEVICES += rockchip_wocyber-a3" >> target/linux/rockchip/image/armv8.mk
+
 # 替换package/boot/uboot-rockchip/Makefile
 cp -f $GITHUB_WORKSPACE/FILES/uboot-rockchip/Makefile package/boot/uboot-rockchip/Makefile
 
