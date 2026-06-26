@@ -33,7 +33,7 @@ mkdir -p package/boot/uboot-rockchip/src/arch/arm/dts
 mkdir -p package/boot/uboot-rockchip/src/configs
 cp -f $GITHUB_WORKSPACE/FILES/dts/*.dts package/boot/uboot-rockchip/src/arch/arm/dts/
 cp -f $GITHUB_WORKSPACE/FILES/uboot-rockchip/*.dtsi package/boot/uboot-rockchip/src/arch/arm/dts/
-cp -f $GITHUB_WORKSPACE/FILES/uboot-rockchip/station-m2-rk3566_defconfig package/boot/uboot-rockchip/src/configs/
+cp -f $GITHUB_WORKSPACE/FILES/uboot-rockchip/*_defconfig package/boot/uboot-rockchip/src/configs/
 
 # 复制dts到files/arch/arm64/boot/dts/rockchip
 mkdir -p target/linux/rockchip/files/arch/arm64/boot/dts/rockchip
