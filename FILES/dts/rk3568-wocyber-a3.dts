@@ -13,7 +13,7 @@
 
 / {
 	model = "Wocyber A3";
-	compatible = "rockchip,wocyber-a3", "rockchip,rk3568";
+	compatible = "wocyber,a3", "rockchip,rk3568";
 
 	aliases {
 		ethernet0 = &gmac0;
