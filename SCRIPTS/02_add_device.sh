@@ -25,7 +25,7 @@ echo -e "\\ndefine Device/rockchip_wocyber-a3
 endef
 TARGET_DEVICES += rockchip_wocyber-a3" >> target/linux/rockchip/image/armv8.mk
 
-cp -f $GITHUB_WORKSPACE/FILES/uboot-rockchip/211-rockchip-rk3568-add-support-more-devices.patch target/linux/rockchip/patches-6.12/
+sed -i 's/rk3399-nanopi-r4se.dtb/rk3568-wocyber-a3.dtb/g' target/linux/rockchip/patches-6.12/210-rockchip-rk3399-add-support-more-devices.patch
 
 # 替换package/boot/uboot-rockchip/Makefile
 cp -f $GITHUB_WORKSPACE/FILES/uboot-rockchip/Makefile package/boot/uboot-rockchip/Makefile
