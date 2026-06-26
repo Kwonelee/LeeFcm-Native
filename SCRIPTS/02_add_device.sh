@@ -31,10 +31,10 @@ sed -i 's/rk3399-nanopi-r4se.dtb/rk3568-wocyber-a3.dtb/g' target/linux/rockchip/
 cp -f $GITHUB_WORKSPACE/FILES/uboot-rockchip/Makefile package/boot/uboot-rockchip/Makefile
 
 # 复制uboot配置、dts到package/boot/uboot-rockchip
-mkdir -p package/boot/uboot-rockchip/src/dts/upstream/src/arm64/rockchip
+mkdir -p package/boot/uboot-rockchip/src/dts/upstream/src/arm64
 mkdir -p package/boot/uboot-rockchip/src/configs
-cp -f $GITHUB_WORKSPACE/FILES/dts/*.dts package/boot/uboot-rockchip/src/dts/upstream/src/arm64/rockchip/
-cp -f $GITHUB_WORKSPACE/FILES/uboot-rockchip/*.dtsi package/boot/uboot-rockchip/src/dts/upstream/src/arm64/rockchip/
+cp -f $GITHUB_WORKSPACE/FILES/dts/*.dts package/boot/uboot-rockchip/src/dts/upstream/src/arm64/
+cp -f $GITHUB_WORKSPACE/FILES/uboot-rockchip/*.dtsi package/boot/uboot-rockchip/src/dts/upstream/src/arm64/
 cp -f $GITHUB_WORKSPACE/FILES/uboot-rockchip/*_defconfig package/boot/uboot-rockchip/src/configs/
 
 # 复制dts到files/arch/arm64/boot/dts/rockchip
