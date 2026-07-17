@@ -283,13 +283,6 @@ define U-Boot/rk3568/Default
   TPL:=rk3568_ddr_1560MHz_v1.23.bin
 endef
 
-define U-Boot/wocyber-a3-rk3568
-  $(U-Boot/rk3568/Default)
-  NAME:=Wocyber A3
-  BUILD_DEVICES:= \
-    rockchip_wocyber-a3
-endef
-
 define U-Boot/bpi-r2-pro-rk3568
   $(U-Boot/rk3568/Default)
   NAME:=Bananapi-R2 Pro
@@ -512,7 +505,6 @@ UBOOT_TARGETS := \
   panther-x2-rk3566 \
   radxa-zero-3-rk3566 \
   rock-3c-rk3566 \
-  wocyber-a3-rk3568 \
   bpi-r2-pro-rk3568 \
   generic-rk3568 \
   fastrhino-r66s-rk3568 \
